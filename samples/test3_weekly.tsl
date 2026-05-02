@@ -1,0 +1,17 @@
+# Test 3: Weekly cleanup + DEPENDS ON syntax variant
+
+TASK weeklyCleanup {
+    RUN "cleanup.sh"
+    EVERY WEEK ON SUNDAY AT 03:00
+}
+
+TASK archiveLogs {
+    RUN "archive.py"
+    DEPENDS ON weeklyCleanup
+    IF success
+}
+
+TASK midweekSync {
+    RUN "sync.sh"
+    EVERY WEEK ON WEDNESDAY AT 12:00
+}

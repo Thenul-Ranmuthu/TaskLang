@@ -1,0 +1,8 @@
+# SEMANTIC TEST 3: Self-dependency (task depends on itself)
+# Syntax is VALID — semantic check should catch the cycle
+# taskA -> taskA
+
+TASK taskA {
+    RUN "script_a.sh"
+    AFTER taskA
+}

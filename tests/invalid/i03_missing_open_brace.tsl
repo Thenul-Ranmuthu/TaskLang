@@ -1,0 +1,7 @@
+# INVALID TEST 3: Missing opening brace
+# Expected error: syntax error — '{' required after task name
+
+TASK missingBrace
+    RUN "backup.sh"
+    EVERY DAY AT 02:00
+}

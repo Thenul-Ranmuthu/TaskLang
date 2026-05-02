@@ -1,0 +1,18 @@
+# SEMANTIC TEST 2: Three-way circular dependency
+# Syntax is VALID — semantic check should catch the cycle
+# taskA -> taskB -> taskC -> taskA
+
+TASK taskA {
+    RUN "script_a.sh"
+    AFTER taskC
+}
+
+TASK taskB {
+    RUN "script_b.sh"
+    AFTER taskA
+}
+
+TASK taskC {
+    RUN "script_c.sh"
+    AFTER taskB
+}

@@ -1,0 +1,37 @@
+# VALID TEST 10: All seven weekday variants
+# Tests: every WEEKDAY token is accepted
+
+TASK mondayJob {
+    RUN "monday.sh"
+    EVERY WEEK ON MONDAY AT 09:00
+}
+
+TASK tuesdayJob {
+    RUN "tuesday.sh"
+    EVERY WEEK ON TUESDAY AT 09:00
+}
+
+TASK wednesdayJob {
+    RUN "wednesday.sh"
+    EVERY WEEK ON WEDNESDAY AT 09:00
+}
+
+TASK thursdayJob {
+    RUN "thursday.sh"
+    EVERY WEEK ON THURSDAY AT 09:00
+}
+
+TASK fridayJob {
+    RUN "friday.sh"
+    EVERY WEEK ON FRIDAY AT 09:00
+}
+
+TASK saturdayJob {
+    RUN "saturday.sh"
+    EVERY WEEK ON SATURDAY AT 09:00
+}
+
+TASK sundayJob {
+    RUN "sunday.sh"
+    EVERY WEEK ON SUNDAY AT 09:00
+}

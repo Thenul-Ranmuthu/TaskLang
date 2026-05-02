@@ -1,0 +1,30 @@
+# SEMANTIC TEST 5: Mixed — some valid tasks, some circular
+# The valid chain (fetch->process->report) is fine
+# The circular pair (syncA->syncB->syncA) should be caught
+
+TASK fetchData {
+    RUN "fetch.sh"
+    EVERY DAY AT 01:00
+}
+
+TASK processData {
+    RUN "process.py"
+    AFTER fetchData
+    IF success
+}
+
+TASK generateReport {
+    RUN "report.py"
+    AFTER processData
+    IF success
+}
+
+TASK syncA {
+    RUN "sync_a.sh"
+    AFTER syncB
+}
+
+TASK syncB {
+    RUN "sync_b.sh"
+    AFTER syncA
+}

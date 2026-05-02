@@ -1,0 +1,7 @@
+# VALID TEST 3: One-time AT schedule (no EVERY keyword)
+# Tests: AT TIME schedule variant
+
+TASK midnightSync {
+    RUN "sync.sh"
+    AT 00:00
+}

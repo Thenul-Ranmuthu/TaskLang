@@ -1,0 +1,8 @@
+# INVALID TEST 11: Invalid time format
+# Expected error: lexical error — time must be HH:MM format
+# "6:00" has only one digit for hours
+
+TASK badTime {
+    RUN "script.sh"
+    EVERY DAY AT 6:00
+}

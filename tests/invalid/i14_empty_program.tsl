@@ -1,0 +1,2 @@
+# INVALID TEST 14: Empty file with only a comment
+# Expected error: syntax error — program requires at least one task

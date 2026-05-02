@@ -1,0 +1,7 @@
+# VALID TEST 2: Weekly scheduled task
+# Tests: EVERY WEEK ON <weekday> AT schedule
+
+TASK weeklyCleanup {
+    RUN "cleanup.sh"
+    EVERY WEEK ON SUNDAY AT 03:00
+}

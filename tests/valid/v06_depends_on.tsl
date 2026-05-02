@@ -1,0 +1,13 @@
+# VALID TEST 6: DEPENDS ON alternative dependency syntax
+# Tests: DEPENDS ON <identifier>
+
+TASK fetchData {
+    RUN "fetch.sh"
+    EVERY DAY AT 01:00
+}
+
+TASK processData {
+    RUN "process.py"
+    DEPENDS ON fetchData
+    IF success
+}

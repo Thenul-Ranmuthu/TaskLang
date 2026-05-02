@@ -1,0 +1,6 @@
+# INVALID TEST 1: Missing RUN statement
+# Expected error: syntax error — RUN is mandatory
+
+TASK brokenTask {
+    EVERY DAY AT 09:00
+}

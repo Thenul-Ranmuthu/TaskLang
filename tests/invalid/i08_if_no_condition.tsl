@@ -1,0 +1,13 @@
+# INVALID TEST 8: IF without success or failure
+# Expected error: syntax error — condition keyword required after IF
+
+TASK backupDB {
+    RUN "backup.sh"
+    EVERY DAY AT 02:00
+}
+
+TASK sendReport {
+    RUN "report.py"
+    AFTER backupDB
+    IF
+}

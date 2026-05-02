@@ -1,0 +1,15 @@
+# VALID TEST 12: Comments throughout the file
+# Tests: single-line comments are ignored correctly
+
+# This task runs every morning
+TASK morningBackup {
+    RUN "backup.sh"       # run the backup script
+    EVERY DAY AT 06:00    # at 6am every day
+}
+
+# This task sends a notification after backup
+TASK notify {
+    RUN "notify.sh"       # send notification
+    AFTER morningBackup   # only after backup completes
+    IF success            # only if backup succeeded
+}

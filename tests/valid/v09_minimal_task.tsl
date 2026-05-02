@@ -1,0 +1,6 @@
+# VALID TEST 9: Minimal task — only RUN, nothing else
+# Tests: RUN alone is sufficient for a valid task
+
+TASK minimalTask {
+    RUN "minimal.sh"
+}

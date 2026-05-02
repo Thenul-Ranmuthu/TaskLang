@@ -1,0 +1,36 @@
+# VALID TEST 11: Long chained multi-task workflow
+# Tests: multiple tasks chained in sequence
+
+TASK fetchData {
+    RUN "fetch.sh"
+    EVERY DAY AT 01:00
+}
+
+TASK validateData {
+    RUN "validate.py"
+    AFTER fetchData
+    IF success
+}
+
+TASK processData {
+    RUN "process.py"
+    AFTER validateData
+    IF success
+}
+
+TASK generateReport {
+    RUN "report.py"
+    AFTER processData
+    IF success
+}
+
+TASK emailReport {
+    RUN "email.sh"
+    AFTER generateReport
+    IF success
+}
+
+TASK cleanupTemp {
+    RUN "cleanup.sh"
+    AFTER emailReport
+}

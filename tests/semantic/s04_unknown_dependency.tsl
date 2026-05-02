@@ -1,0 +1,9 @@
+# SEMANTIC TEST 4: Dependency on a task that does not exist
+# Syntax is VALID — semantic check should catch unknown task
+# sendReport depends on "backupDB" which is never defined
+
+TASK sendReport {
+    RUN "report.py"
+    AFTER backupDB
+    IF success
+}

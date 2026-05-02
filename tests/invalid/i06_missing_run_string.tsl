@@ -1,0 +1,7 @@
+# INVALID TEST 6: Missing string after RUN
+# Expected error: syntax error — STRING required after RUN
+
+TASK badRun {
+    RUN
+    EVERY DAY AT 02:00
+}

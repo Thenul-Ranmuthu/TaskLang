@@ -1,0 +1,7 @@
+# INVALID TEST 2: Missing task name after TASK keyword
+# Expected error: syntax error — IDENTIFIER required after TASK
+
+TASK {
+    RUN "backup.sh"
+    EVERY DAY AT 02:00
+}

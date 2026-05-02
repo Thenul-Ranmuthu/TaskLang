@@ -1,0 +1,13 @@
+# VALID TEST 4: Dependency with IF success condition
+# Tests: AFTER <identifier>, IF SUCCESS
+
+TASK backupDB {
+    RUN "backup.sh"
+    EVERY DAY AT 02:00
+}
+
+TASK sendReport {
+    RUN "report.py"
+    AFTER backupDB
+    IF success
+}

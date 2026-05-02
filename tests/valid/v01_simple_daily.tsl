@@ -1,0 +1,7 @@
+# VALID TEST 1: Simple daily recurring task
+# Tests: basic task structure, EVERY DAY AT schedule
+
+TASK dailyReport {
+    RUN "report.py"
+    EVERY DAY AT 06:00
+}

@@ -1,0 +1,13 @@
+# INVALID TEST 10: AFTER without an identifier
+# Expected error: syntax error — IDENTIFIER required after AFTER
+
+TASK backupDB {
+    RUN "backup.sh"
+    EVERY DAY AT 02:00
+}
+
+TASK sendReport {
+    RUN "report.py"
+    AFTER
+    IF success
+}

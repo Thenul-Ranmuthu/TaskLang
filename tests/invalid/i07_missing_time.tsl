@@ -1,0 +1,7 @@
+# INVALID TEST 7: Missing TIME after AT
+# Expected error: syntax error — TIME required after AT
+
+TASK missingTime {
+    RUN "script.sh"
+    EVERY DAY AT
+}

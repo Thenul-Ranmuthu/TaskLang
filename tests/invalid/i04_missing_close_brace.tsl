@@ -1,0 +1,6 @@
+# INVALID TEST 4: Missing closing brace
+# Expected error: syntax error — '}' required to close task body
+
+TASK missingClose {
+    RUN "backup.sh"
+    EVERY DAY AT 02:00

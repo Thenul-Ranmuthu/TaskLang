@@ -1,0 +1,7 @@
+# INVALID TEST 5: Missing TASK keyword
+# Expected error: syntax error — program must start with TASK
+
+backupDB {
+    RUN "backup.sh"
+    EVERY DAY AT 02:00
+}

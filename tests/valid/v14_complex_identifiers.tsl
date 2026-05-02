@@ -1,0 +1,18 @@
+# VALID TEST 14: Complex identifier names
+# Tests: identifiers with digits and underscores
+
+TASK backup_v2 {
+    RUN "backup_v2.sh"
+    EVERY DAY AT 02:00
+}
+
+TASK send_report_2024 {
+    RUN "report2024.py"
+    AFTER backup_v2
+    IF success
+}
+
+TASK task123 {
+    RUN "script123.sh"
+    EVERY WEEK ON FRIDAY AT 17:00
+}

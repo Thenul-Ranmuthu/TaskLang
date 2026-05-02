@@ -1,0 +1,13 @@
+# Test 4: Circular dependency — taskA -> taskB -> taskA
+# Parser will accept it (syntax is valid),
+# but semantic check will flag the cycle.
+
+TASK taskA {
+    RUN "script_a.sh"
+    AFTER taskB
+}
+
+TASK taskB {
+    RUN "script_b.sh"
+    AFTER taskA
+}

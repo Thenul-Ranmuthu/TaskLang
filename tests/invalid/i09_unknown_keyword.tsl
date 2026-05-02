@@ -1,0 +1,8 @@
+# INVALID TEST 9: Unknown/misspelled keyword
+# Expected error: lexical error on unknown character sequence
+# DAILY is not a valid keyword — should be EVERY DAY
+
+TASK wrongKeyword {
+    RUN "script.sh"
+    DAILY AT 06:00
+}

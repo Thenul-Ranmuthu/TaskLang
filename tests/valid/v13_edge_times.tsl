@@ -1,0 +1,12 @@
+# VALID TEST 13: Edge case time values
+# Tests: boundary times 00:00 and 23:59
+
+TASK midnightTask {
+    RUN "midnight.sh"
+    EVERY DAY AT 00:00
+}
+
+TASK lastMinuteTask {
+    RUN "lastminute.sh"
+    EVERY DAY AT 23:59
+}

@@ -1,0 +1,12 @@
+# VALID TEST 8: Task with no schedule, only dependency
+# Tests: RUN is the only mandatory clause — schedule is optional
+
+TASK buildApp {
+    RUN "build.sh"
+    EVERY DAY AT 07:00
+}
+
+TASK runTests {
+    RUN "test.sh"
+    AFTER buildApp
+}

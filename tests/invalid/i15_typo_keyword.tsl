@@ -1,0 +1,8 @@
+# INVALID TEST 15: Misspelled EVERY keyword
+# Expected error: lexical + syntax error
+# "EVRY" is not a recognised token
+
+TASK typoTask {
+    RUN "script.sh"
+    EVRY DAY AT 06:00
+}

@@ -1,0 +1,6 @@
+# Test 5: INVALID — missing RUN statement inside task body
+# Parser should reject this with a parse error.
+
+TASK brokenTask {
+    EVERY DAY AT 09:00
+}

@@ -1,0 +1,7 @@
+# Test 1: Simple daily recurring scheduled task
+
+TASK dailyReport {
+    RUN "report.py"
+    # DEPENDS ON dailyReport
+    EVERY DAY AT 06:00
+}
