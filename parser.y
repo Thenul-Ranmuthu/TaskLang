@@ -94,9 +94,6 @@ static void print_task(void) {
     printf("  Schedule: %s\n", current_schedule ? current_schedule : "(none)");
     if (current_dep)  printf("  Depends on: %s\n", current_dep);
     if (current_cond) printf("  Condition: %s\n",  current_cond);
-
-    
-
     printf("\n");
 }
 %}
